@@ -3,9 +3,12 @@
 
 <!-- event binding -->
 <!-- naive 2 way binding -->
-<input type="text" (input)="OnTextChanged($event)">
+<!-- <input type="text" (input)="OnTextChanged($event)"> -->
+
+<input type="text" [(ngModel)]="servername">
 <button class="btn btn-primary" [disabled] = isDisabled (click)="OnServerCreation()">Add</button>
 {{serverCreationStatus}}
+
 {{servername}}
 <app-server>
 
