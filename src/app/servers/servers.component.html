@@ -1,6 +1,12 @@
 <!-- here we are using property binding -->
 <!-- the property is in sync with the value  -->
-<button class="btn btn-primary" [disabled] = isDisabled>Add</button>
+
+<!-- event binding -->
+<!-- naive 2 way binding -->
+<input type="text" (input)="OnTextChanged($event)">
+<button class="btn btn-primary" [disabled] = isDisabled (click)="OnServerCreation()">Add</button>
+{{serverCreationStatus}}
+{{servername}}
 <app-server>
 
 </app-server>

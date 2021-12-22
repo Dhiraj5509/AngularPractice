@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  isDisabled = true ; 
+  isDisabled = true ;
+  servername = '' ;  
+  serverCreationStatus = "No server was created" ; 
   constructor() {
     setTimeout(() => {
         this.isDisabled = false ; 
@@ -15,5 +17,12 @@ export class ServersComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  OnServerCreation()
+  {
+    this.serverCreationStatus = "Server created successfully" ; 
+  }
+  OnTextChanged(event : Event)
+  {
+    this.servername = (<HTMLInputElement>event.target).value ; 
+  }
 }
