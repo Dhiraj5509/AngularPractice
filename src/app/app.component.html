@@ -1,13 +1,14 @@
 <div class="container">
 
     <!-- <button (click)=""></button> -->
-    
-    <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)" >
+
+    <!-- app-cockpit will call the method onServerAdded(data) -->
+    <app-cockpit (serverCreated)="onServerAdded($event)" (bprintCreated)="onBlueprintAdded($event)" >
 
     </app-cockpit>
 
     <app-server-element *ngFor="let element of serverElements" [element]="element">
 
     </app-server-element>
-</div>
+</div> 
   
