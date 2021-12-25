@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output , EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output , EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
@@ -16,20 +16,25 @@ export class CockpitComponent implements OnInit {
   blueprintCreated = new EventEmitter<{name:string , content:string}>() ; 
   constructor() { }
   // newServerName = '';
-  newServerContent = '';
+  // newServerContent = '';
 
+
+  // using ViewChild() decorator we can get acess to the dom element/component of the template 
+  // ViewChild() return the ElementRef
+  // here serverContentLocalReference is a name of the local reference attached to the dom element
+  @ViewChild('serverContentLocalReference' , {static:true}) serverContent : ElementRef ; 
   onAddServer(serverName:HTMLInputElement) {
     // we are emitting the response to the parent..
     this.serverCreated.emit({
       name : serverName.value , 
-      content : this.newServerContent
+      content : this.serverContent.nativeElement.value 
     })
   }
 
   onAddBlueprint(serverName : HTMLInputElement) {
     this.blueprintCreated.emit({
       name:serverName.value , 
-      content : this.newServerContent
+      content : this.serverContent.nativeElement.value 
     })
   }
   ngOnInit(): void {

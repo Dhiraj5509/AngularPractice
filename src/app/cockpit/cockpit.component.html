@@ -10,9 +10,8 @@
       <input type="text" class="form-control" #serverNameLocalReference>
 
 
-      <!-- we have used 2 way binding so that we can use that in component -->
       <label>Server Content</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <input type="text" class="form-control" #serverContentLocalReference>
       <br>
       <button
         class="btn btn-primary"
