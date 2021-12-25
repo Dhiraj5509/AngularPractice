@@ -6,31 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements : {
-    type:string , 
-    name : string , 
-    content : string
-  }[] = [] ;
+  num : number[] = [] ; 
   
   constructor(){
     
   }
+  onIntervalFired(num : number)
+  {
+    if(num%2==0){
+      this.num.push(num)
+    }
+    else
+    {
+      this.num.push(num) ; 
+    }
 
-  onServerAdded(serverDetail:{name:string , content:string})
-  {
-    this.serverElements.push({
-      type: "server" , 
-      name : serverDetail.name , 
-      content : serverDetail.content
-    })
   }
-  
-  onBlueprintAdded(serverDetail:{name:string , content:string})
-  {
-    this.serverElements.push({
-      type: "blueprint" , 
-      name : serverDetail.name , 
-      content : serverDetail.content
-    })
-  }
+
 }
