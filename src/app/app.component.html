@@ -1,3 +1,5 @@
+
+
 <div class="container">
 
     <!-- <button (click)=""></button> -->
@@ -5,10 +7,17 @@
     <!-- app-cockpit will call the method onServerAdded(data) -->
     <app-cockpit (serverCreated)="onServerAdded($event)" (bprintCreated)="onBlueprintAdded($event)" >
 
+        <!-- this content will be projected in cockpit.html template at a place where ng-content tag is mentioned--> 
+        <!-- we can't use this local reference in cookpit -->
+        <!-- we can though use this in app  -->
+        <!-- to use this in cookpit , use ContentChild() decorator  -->
+        <p #localReference>ng-content projection</p>
     </app-cockpit>
 
     <app-server-element *ngFor="let element of serverElements" [element]="element">
 
     </app-server-element>
+
+    <hr>   
 </div> 
   
