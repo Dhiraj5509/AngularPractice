@@ -15,4 +15,22 @@ export class AppComponent {
   constructor(){
     
   }
+
+  onServerAdded(serverDetail:{name:string , content:string})
+  {
+    this.serverElements.push({
+      type: "server" , 
+      name : serverDetail.name , 
+      content : serverDetail.content
+    })
+  }
+  
+  onBlueprintAdded(serverDetail:{name:string , content:string})
+  {
+    this.serverElements.push({
+      type: "blueprint" , 
+      name : serverDetail.name , 
+      content : serverDetail.content
+    })
+  }
 }
