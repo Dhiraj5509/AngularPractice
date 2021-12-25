@@ -1,12 +1,10 @@
+<div class="container">
+    <app-cockpit [serverElements]="serverElements">
 
-<app-header>
-    
-</app-header>
+    </app-cockpit>
 
-<app-recipes>
+    <app-server-element *ngFor="let element of serverElements" [element]="element">
 
-</app-recipes>
-
-<app-shopping-list>
-
-</app-shopping-list>
+    </app-server-element>
+</div>
+  

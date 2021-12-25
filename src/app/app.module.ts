@@ -4,25 +4,15 @@ import { AppComponent } from './app.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { FormsModule } from '@angular/forms';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
-import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
-import { RecipeItemComponent } from './recipes/recipes-list/recipe-item/recipe-item.component';
-import { HeaderComponent } from './header/header.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 @NgModule({
   declarations: [
     AppComponent,
     SuccessAlertComponent,
     WarningAlertComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    RecipesComponent,
-    RecipesListComponent,
-    RecipesDetailComponent,
-    RecipeItemComponent,
-    HeaderComponent
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule , FormsModule
