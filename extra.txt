@@ -1,0 +1,5 @@
+ng if
+ng for
+else block using ng template
+components create , using one component in other component 
+one component passing data to other component 

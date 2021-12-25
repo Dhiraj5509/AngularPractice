@@ -8,18 +8,37 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   isDisabled = true ;
   servername = '' ;  
+  servers : string[] = []; 
   serverCreationStatus = "No server was created" ; 
+  isButtonCLicked = false ; 
   constructor() {
-    setTimeout(() => {
-        this.isDisabled = false ; 
-    }, 2000);
    }
-
+   
   ngOnInit(): void {
+  }
+
+  OnInput()
+  {
+    this.isButtonCLicked = false ;
+  }
+  isButtonDisabled()
+  {
+    if(this.servername === '')
+    {
+      this.isDisabled = true ; 
+    }
+    else{
+      this.isDisabled = false ; 
+    }
+    return this.isDisabled ; 
   }
   OnServerCreation()
   {
+    this.servers.push(this.servername) ; 
     this.serverCreationStatus = "Server created successfully" ; 
+    this.isButtonCLicked = true ; 
+    console.log(this.servers.length);
+    
   }
   OnTextChanged(event : Event)
   {

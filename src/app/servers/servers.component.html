@@ -5,18 +5,27 @@
 <!-- naive 2 way binding -->
 <!-- <input type="text" (input)="OnTextChanged($event)"> -->
 
-<input type="text" [(ngModel)]="servername">
-<button class="btn btn-primary" [disabled] = isDisabled (click)="OnServerCreation()">Add</button>
-{{serverCreationStatus}}
+<input type="text" [(ngModel)]="servername" (input)="OnInput()">
+<button class="btn btn-primary" [disabled] = isButtonDisabled() (click)="OnServerCreation()">Add</button>
+<br>
 
-{{servername}}
-<app-server>
+<div *ngIf="isButtonCLicked">
+    <h3>
+        {{serverCreationStatus}}
+    </h3>
+</div>
 
-</app-server>
+<div *ngIf="!isButtonDisabled(); else elseBlock">
+    <h3 [ngClass]="{enabled:true , disabled:false}">Button is enabled</h3>
+</div>
 
-<hr>
-<hr> 
 
-<app-server>
+<ng-template #elseBlock>
+    <h3 [ngStyle]="{color:'red'}">Button is disabled</h3>
+</ng-template>
+
+<br>
+
+<app-server *ngFor="let server of servers" [server]="server">
 
 </app-server>

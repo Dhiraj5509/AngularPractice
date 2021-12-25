@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
-  serverName = "Tomcat" ; 
-  serverStatus = "not-active" ; 
+  @Input()
+  server : string ; 
+  
   constructor() { }
   ngOnInit(): void {
   }
