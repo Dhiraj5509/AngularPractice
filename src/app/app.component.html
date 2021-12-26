@@ -1,13 +1,9 @@
-<app-game-control (fireInterval)="onIntervalFired($event)"></app-game-control>
-    <div *ngFor="let n of num">
-        <div *ngIf="'n%2==0' ; else elseBlock ">
-            <app-even [num]="n">
-
-            </app-even>
-        </div>
-
-        <ng-template #elseBlock>
-            <app-odd [num]="n">
-            </app-odd>
-        </ng-template>
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes></app-recipes>
+      <app-shopping-list></app-shopping-list>
     </div>
+  </div>
+</div>
