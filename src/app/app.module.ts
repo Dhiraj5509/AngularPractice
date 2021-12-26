@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BasicDirective } from './directives/basic.directive';
+import { BetterDirective } from './directives/better.directive';
+import { TestDirective } from './directives/test.directive';
 @NgModule({
   declarations: [
     AppComponent , 
-    BasicDirective
+    BasicDirective, BetterDirective, TestDirective
   ],
   imports: [
     BrowserModule,
