@@ -1,7 +1,10 @@
 <!-- using the directive as an attribute of an element-->
-<h1 appBasicHighlight>Here</h1>
-<h1 appBetter [bgColor]="'red'">Here</h1>
-<img src="https://esthinktank.com/wp-content/uploads/2018/12/anton-sharov-799802-unsplash.jpg" alt="" appBetter >
-<appTest>
 
-</appTest>
+<div *ngFor="let id of numbers">
+    Id is {{id}}
+    <div ngSwitch="{{id%2===0}}">
+      <p *ngSwitchCase="'true'" [ngClass]="'one'">I am Even.<p>
+      <div *ngSwitchCase="'false'" [ngClass]="'two'">I am Odd.</div>
+      <div *ngSwitchDefault>Nothing Found.</div>
+    </div> 	
+  </div>  
